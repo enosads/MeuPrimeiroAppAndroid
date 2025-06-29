@@ -3,4 +3,7 @@
     <string name="meu_primeiro_app_android">Meu primeiro App Android</string>
     <string name="android_logo">Android Logo</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name_age_gender">\nNome: %1$s\nIdade: %2$s anos\nSexo: %3$s</string>
+    <string name="male">Masculino</string>
+    <string name="female">Feminino</string>
 </resources>

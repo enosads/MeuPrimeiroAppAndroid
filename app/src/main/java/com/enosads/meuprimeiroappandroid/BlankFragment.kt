@@ -1,11 +1,11 @@
 package com.enosads.meuprimeiroappandroid
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.fragment.app.Fragment
+import com.enosads.meuprimeiroappandroid.databinding.FragmentBlankBinding
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "name"
@@ -18,6 +18,9 @@ private const val ARG_PARAM3 = "isMale"
  * create an instance of this fragment.
  */
 class BlankFragment : Fragment() {
+    private var _binding: FragmentBlankBinding? = null
+    private val binding get() = _binding!!
+
     private var param1: String? = null
     private var param2: Int? = null
     private var param3: Boolean? = null
@@ -34,19 +37,24 @@ class BlankFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false)
+    ): View {
+        _binding = FragmentBlankBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val tvFragmentContent = view.findViewById<TextView>(R.id.tvFragmentContent)
-        tvFragmentContent.text = """
-            Name: $param1
-            Age: $param2
-            Sexo: ${if (param3 == true) "Masculino" else "Feminino"}
-            """.trimIndent()
+        binding.tvFragmentContent.text = getString(
+            R.string.name_age_gender,
+            param1,
+            param2.toString(),
+            if (param3 == true) getString(R.string.male) else getString(R.string.female)
+        ).trimIndent()
     }
 
     companion object {
