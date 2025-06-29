@@ -26,5 +26,13 @@ class MainActivity : AppCompatActivity() {
             text = "Meu primeiro App Android!"
             textAlignment = TextView.TEXT_ALIGNMENT_CENTER
         }
+
+        supportFragmentManager.beginTransaction().add(
+            R.id.flMainContainer, BlankFragment.newInstance(
+                name = "Enos",
+                age = 26,
+                isMale = true
+            )
+        ).commit()
     }
 }
