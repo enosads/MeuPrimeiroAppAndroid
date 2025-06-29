@@ -1,5 +1,6 @@
 package com.enosads.meuprimeiroappandroid
 
+import android.content.Context
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
@@ -14,6 +15,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        val myClass = MyClass(context = applicationContext)
+
+        showToast(context = this)
+
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show()
 //        val url = "https://www.rocketseat.com.br"
 //        val intent = Intent(Intent.ACTION_VIEW, url.toUri())
@@ -39,5 +45,8 @@ class MainActivity : AppCompatActivity() {
                 isMale = true
             )
         ).commit()
+    }
+    fun showToast(context: Context) {
+        Toast.makeText(context, "Hello World", Toast.LENGTH_SHORT).show()
     }
 }
