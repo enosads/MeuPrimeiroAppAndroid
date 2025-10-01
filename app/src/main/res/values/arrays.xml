@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="array_contacts">
+        <item>Enos</item>
+        <item>Bernado</item>
+        <item>João</item>
+    </array>
+    <array name="products">
+        <item>Banana</item>
+        <item>Maçã</item>
+    </array>
+    <integer-array name="array_types">
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+</resources>

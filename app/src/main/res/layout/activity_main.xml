@@ -11,6 +11,7 @@
         android:id="@+id/tvMyFirstAndroidApp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:text="@string/meu_primeiro_app_android"
@@ -18,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivAndroidLogo" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
